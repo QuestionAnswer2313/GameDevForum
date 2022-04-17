@@ -51,6 +51,27 @@ sandbox_on_update(f32 timestep)
 void
 sandbox_on_ui_render()
 {
+    ImGuiIO* io = igGetIO();
+    ImGuiWindowFlags window_flags = ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoDocking | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoNav | ImGuiWindowFlags_NoMove;
+    ImVec2 window_pos;
+    window_pos.x = 150;
+    window_pos.y = 50;
+    igSetNextWindowPos(window_pos, ImGuiCond_Always, ImVec2(0,0));
+    igSetNextWindowBgAlpha(0.35f); // Transparent background
+
+    static bool isOverlayVisible = true;
+    if (igBegin("GameDemoWindow", &isOverlayVisible, window_flags))
+    {
+	igText("KeyBindings");
+	igSeparator();
+	igText("ESC - exit");
+	igText("WASD - camera movement");
+	igText("Middle Mouse Button - Scroll");
+	igText("E - wireframe mode");
+	igText("F - face culling");
+	igText("P - change projection");
+    }
+    igEnd();
 }
 
 void
