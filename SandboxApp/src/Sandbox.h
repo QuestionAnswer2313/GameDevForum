@@ -1,0 +1,12 @@
+#ifndef SANDBOX
+#define SANDBOX
+
+#include <Engine.h>
+
+void sandbox_on_attach(NativeWindow window);
+void sandbox_on_update(f32 timestep);
+void sandbox_on_ui_render();
+void sandbox_on_event(Event* event);
+void sandbox_on_destroy();
+
+#endif
