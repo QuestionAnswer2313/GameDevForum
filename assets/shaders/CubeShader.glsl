@@ -27,7 +27,7 @@ in float o_TextureID;
 
 void main()
 {
-    int textId = int(o_TextureID);
+    int textId = int(o_TextureID + 0.5);
     //Color = vec4(vec3(gl_FragCoord.z), 1.0);
     Color = vec4(texture(u_Textures[textId], o_TextureCoordinates).rgb, 1.0);
 }
