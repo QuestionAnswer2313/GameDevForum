@@ -130,7 +130,7 @@ project "SandboxApp"
 	"GL", "GLU",
 	"X11","dl",
 	"Xinerama", "Xcursor", "m",
-	"Xxf86vm", "Xrandr", "pthread", "Xi",
+	"Xrandr", "pthread", "Xi",
 	"stdc++"
       }
 
